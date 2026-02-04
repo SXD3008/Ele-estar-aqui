@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #151b30;
+  --accent: #4ad7ff;
+  --accent-2: #f8c045;
+  --text: #f5f7ff;
+  --muted: #9fa8c4;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2040 0%, var(--bg) 55%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 64px;
+}
+
+.page {
+  width: min(1080px, 100%);
+  display: grid;
+  gap: 24px;
+}
+
+header {
+  text-align: center;
+  display: grid;
+  gap: 8px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+header p {
+  color: var(--muted);
+}
+
+main {
+  display: grid;
+  gap: 20px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  background: var(--panel);
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
+}
+
+.game-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0a0f1f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  text-align: center;
+  background: rgba(7, 10, 20, 0.82);
+  padding: 24px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.overlay p {
+  color: var(--muted);
+  max-width: 480px;
+}
+
+button {
+  border: none;
+  background: linear-gradient(120deg, var(--accent), #6b7bff);
+  color: #0b1020;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(74, 215, 255, 0.35);
+}
+
+.tips {
+  background: var(--panel);
+  padding: 16px 20px;
+  border-radius: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.tips h3 {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.tips ul {
+  display: grid;
+  gap: 6px;
+  padding-left: 18px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 24px 12px 48px;
+  }
+
+  .hud {
+    font-size: 0.95rem;
+  }
+}
