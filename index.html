@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astro Coleta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Astro Coleta</h1>
+      <p>Colete estrelas, desvie dos cometas e sobreviva o máximo possível.</p>
+    </header>
+
+    <main>
+      <section class="hud">
+        <div><strong>Pontuação:</strong> <span id="score">0</span></div>
+        <div><strong>Vidas:</strong> <span id="lives">3</span></div>
+        <div><strong>Melhor:</strong> <span id="best">0</span></div>
+      </section>
+
+      <div class="game-wrapper">
+        <canvas id="game" width="900" height="520" aria-label="Jogo Astro Coleta"></canvas>
+        <div class="overlay" id="overlay">
+          <h2 id="overlay-title">Pronto?</h2>
+          <p id="overlay-text">Use WASD ou setas para mover. Pegue 10 estrelas para acelerar o desafio.</p>
+          <button id="start-btn">Jogar</button>
+        </div>
+      </div>
+
+      <section class="tips">
+        <h3>Controles</h3>
+        <ul>
+          <li><strong>WASD</strong> ou <strong>Setas</strong> para mover o astronauta.</li>
+          <li>Toque/click e arraste no canvas para jogar no celular.</li>
+          <li>Pressione <strong>Espaço</strong> para pausar.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Feito para rodar direto no GitHub Pages. Bom jogo!</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
